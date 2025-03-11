@@ -1,0 +1,20 @@
+{
+  "name": "falconmedia/magento2-merge-attribute-options",
+  "description": "Magento 2 module to Show and Merge Attribute Options through CLI",
+  "type": "magento2-module",
+  "authors": [
+    {
+      "name": "Henk Valk",
+      "email": "henk@falconmedia.nl"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=7.4"
+  },
+  "autoload": {
+    "psr-4": { "FalconMedia\\MergeAttributeOptions\\": "src/" },
+    "files": [ "src/registration.php" ]
+  }
+}
+
