@@ -9,19 +9,66 @@ for one and the same attribute option that already exists.
 ## Module Features
 the possibility to show the following by using CLI Commands: 
 
+- List all Product Attributes and option to filter on code, name, and input type 
 - List Attribute Options with Product Count
 - List Attribute Options with labels per store
 - Merge Attribute Options into one option
 
 ## Installation
 ```
-composer require falconmedia/magento2-merge-attributes-options
+composer require falconmedia/magento2-merge-attribute-options
 bin/magento module:enable FalconMedia/MergeAttributeOptions
 bin/magento setup:upgrade
 bin/magento setup:di:compile
 ```
 
 ## Usage
+
+
+### List all Attributes
+`bin/magento falconmedia:attribute:list` will show all Product Attributes
+
+You have also the possibility to filter on the attributes with the options 
+- `--code=` or `-C` to filter on an attribute code
+- `--name=` or `-N` to filter on an Attribute Name/Label
+- `--type=` or `-T` to filter on an Attribute input type
+
+#### Examples
+Filter on an attribute code with `--code=`
+```
+❯ bin/magento falconmedia:attribute:list --code=sku
++--------------+---------------------+----------------------+---------+
+| Attribute ID | Attribute Code      | Admin Name           | Type    |
++--------------+---------------------+----------------------+---------+
+| 74           | sku                 | SKU                  | text    |
+| 122          | sku_type            | Dynamic SKU          | boolean |
+| 267          | supplier_sku        | Supplier SKU         | text    |
+| 222          | xcore_suppliers_sku | Supplier - Item Code | text    |
++--------------+---------------------+----------------------+---------+
+```
+or with the short flag of `-C`
+
+```
+❯  bin/magento falconmedia:attribute:list -C sku
++--------------+---------------------+----------------------+---------+
+| Attribute ID | Attribute Code      | Admin Name           | Type    |
++--------------+---------------------+----------------------+---------+
+| 74           | sku                 | SKU                  | text    |
+| 122          | sku_type            | Dynamic SKU          | boolean |
+| 267          | supplier_sku        | Supplier SKU         | text    |
+| 222          | xcore_suppliers_sku | Supplier - Item Code | text    |
++--------------+---------------------+----------------------+---------+
+```
+Get attribute list with multiple filters 
+```
+❯  bin/magento falconmedia:attribute:list -C sku -T boolean
++--------------+----------------+-------------+---------+
+| Attribute ID | Attribute Code | Admin Name  | Type    |
++--------------+----------------+-------------+---------+
+| 122          | sku_type       | Dynamic SKU | boolean |
++--------------+----------------+-------------+---------+
+```
+
 ### List Attribute Options with Product Count
 ```
 ❯ bin/magento falconmedia:attribute:list-options size

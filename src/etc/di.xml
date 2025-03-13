@@ -5,6 +5,7 @@
     <type name="Magento\Framework\Console\CommandList">
         <arguments>
             <argument name="commands" xsi:type="array">
+                <item name="list_attributes" xsi:type="object">FalconMedia\MergeAttributeOptions\Console\ListAttributes</item>
                 <item name="merge_attribute_options" xsi:type="object">FalconMedia\MergeAttributeOptions\Console\MergeAttributeOptions</item>
                 <item name="list_attribute_options" xsi:type="object">FalconMedia\MergeAttributeOptions\Console\ListAttributeOptions</item>
                 <item name="list_attribute_options_store" xsi:type="object">FalconMedia\MergeAttributeOptions\Console\ListAttributeOptionsStore</item>
