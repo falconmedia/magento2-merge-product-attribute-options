@@ -37,14 +37,14 @@ class ListAttributeOptions extends Command
         parent::__construct();
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this->setName('falconmedia:attribute:list-options')
             ->setDescription('List attribute options with product count')
             ->addArgument(self::ATTRIBUTE_CODE, InputArgument::REQUIRED, 'Attribute Code');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         try {
             $this->state->setAreaCode(Area::AREA_ADMINHTML);

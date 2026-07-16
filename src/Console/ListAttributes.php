@@ -24,7 +24,7 @@ class ListAttributes extends Command
         parent::__construct();
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this->setName('falconmedia:attribute:list')
             ->setDescription('List all product attributes with their ID, code, admin name, and type.')
@@ -48,7 +48,7 @@ class ListAttributes extends Command
             );
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         try {
             $this->appState->setAreaCode('adminhtml');
