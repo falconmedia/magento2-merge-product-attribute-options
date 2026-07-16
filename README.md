@@ -17,7 +17,7 @@ the possibility to show the following by using CLI Commands:
 ## Installation
 ```
 composer require falconmedia/magento2-merge-attribute-options
-bin/magento module:enable FalconMedia/MergeAttributeOptions
+bin/magento module:enable FalconMedia_MergeAttributeOptions
 bin/magento setup:upgrade
 bin/magento setup:di:compile
 ```
