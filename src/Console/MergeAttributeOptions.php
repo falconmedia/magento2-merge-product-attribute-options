@@ -30,7 +30,7 @@ class MergeAttributeOptions extends Command
         parent::__construct();
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this->setName('falconmedia:attribute:merge-options')
             ->setDescription('Merge attribute options into one option')
@@ -39,7 +39,7 @@ class MergeAttributeOptions extends Command
             ->addArgument(self::TARGET_OPTION_ID, InputArgument::REQUIRED, 'Target option ID');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         try {
             $this->state->setAreaCode(Area::AREA_ADMINHTML);
