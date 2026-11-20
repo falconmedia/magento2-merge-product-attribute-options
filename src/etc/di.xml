@@ -9,6 +9,8 @@
                 <item name="merge_attribute_options" xsi:type="object">FalconMedia\MergeAttributeOptions\Console\MergeAttributeOptions</item>
                 <item name="list_attribute_options" xsi:type="object">FalconMedia\MergeAttributeOptions\Console\ListAttributeOptions</item>
                 <item name="list_attribute_options_store" xsi:type="object">FalconMedia\MergeAttributeOptions\Console\ListAttributeOptionsStore</item>
+                <item name="rename_attribute_option" xsi:type="object">FalconMedia\MergeAttributeOptions\Console\RenameOption</item>
+                <item name="rename_attribute_store_option" xsi:type="object">FalconMedia\MergeAttributeOptions\Console\RenameStoreOption</item>
             </argument>
         </arguments>
     </type>
